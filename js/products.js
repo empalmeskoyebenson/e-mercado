@@ -2,7 +2,8 @@
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 
-//Estuve como 6 horas para resolver esta parte, lo logré ejecutando la función getJSONdata con un console.log, ahi me di cuenta de que el array estaba en un objeto data.
+//Estuve como 6 horas para resolver esta parte, lo logré ejecutando la función getJSONdata con un console.log, ahi me di cuenta de que el array estaba en un objeto .data
+//Además en el JSON tienen las últimas dos imágenes de los autos alrevez
 document.addEventListener("DOMContentLoaded", function (e) {
     document.getElementById("despl-list-prod-div").innerHTML = "";
     getJSONData(PRODUCTS_URL).then(datos =>
