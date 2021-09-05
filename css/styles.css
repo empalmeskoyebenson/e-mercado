@@ -149,6 +149,9 @@ a.custom-card:hover {
   padding-bottom: 40px;
   font-family: Arial, Helvetica, sans-serif;
   cursor: pointer;
+  margin-right: 25%;
+  border: solid 1px #53C0FB;
+  border-radius: 10px;
 }
 .imgauto{
   height: 100%;
@@ -161,5 +164,13 @@ p.nombreAuto{
   color: black;
   padding-left: 50px;
   font-size: 30px;
+  border-radius: 5px;
+}
+.oculto{
+  display: none;
+}
+#esquinausuario{
+  color: white;
+  margin-bottom: 0px;
 }
 

@@ -16,13 +16,28 @@
   <body>
     <nav class="site-header sticky-top py-1 bg-dark">
       <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
+        <a class="py-2 d-none d-md-inline-block" href="inicio.html">Inicio</a>
         <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
         <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+        <div class="py-2 d-none d-md-inline-block" id="esquinausuario"></div>
       </div>
     </nav>
+    <div class="filtroprecio">
+      <input placeholder="Precio Min." type="number" name="minprecio" id="minprecio">
+      <input placeholder="Precio Max." type="number" name="maxprecio" id="maxprecio">
+      <button onclick="aplicarfiltros()">Filtrar</button>
+      <button onclick="limpiarfiltros()">Limpiar</button><br><br>
+      <input type="search" name="buscador" id="buscador" placeholder="buscar"><br><br>
+      <label for="filtropor">Ordenar por:</label>
+      <select id="filtropor" name="filtropor">
+        <option value="default" selected disabled>-Seleccione-</option>
+        <option value="relev">Relevancia</option>
+        <option value="pAsc">Precio ascendente</option>
+        <option value="pDes">Precio descendente</option>
+      </select>
+    </div>
     <div id="despl-list-prod">
       <div id="despl-list-prod-div"></div>
     </div>

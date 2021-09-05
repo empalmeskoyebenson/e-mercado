@@ -3,9 +3,10 @@
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function (e) {
     document.getElementById("btnlogin").addEventListener("click", function () {
-        let emailinput = document.getElementById("emailinput")
+        let userinput = document.getElementById("userinput")
         let passinput = document.getElementById("passinput")
-        if (emailinput.value.includes("@") && emailinput.value.includes(".com") && passinput.value.length >= 8) {
+        if (userinput.value.length != 0 && passinput.value.length >= 8) {
+            window.localStorage.setItem('usuario', userinput.value)
             alert("entrando al sitio")
             window.location.href = 'inicio.html';
 
