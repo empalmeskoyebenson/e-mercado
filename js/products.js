@@ -17,8 +17,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
         datos.data.forEach(element => {
             let contenido = "";
             contenido = `
-          <div class="contenidoAutos">
-              <img class="imgauto" src="`+ element.imgSrc + `" alt="">
+          <div class="contenidoAutos" >
+              <img class="imgauto" src="`+ element.imgSrc + ` "onclick="irproducto('${element.name}')">
               <p class="nombreAuto">` + element.name + `</p>
               <p class="descripcionauto">`+ element.description + `</p>
               <p class=>Costo = `+ element.currency + ` ` + '<strong class="valor">' + element.cost + `</strong></p>
@@ -41,7 +41,7 @@ function mostrarlista(array) {
         let contenido = "";
         contenido = `
         <div class="contenidoAutos">
-        <img class="imgauto" src="`+ element.imgSrc + `" alt="">
+        <img class="imgauto" src="`+ element.imgSrc + ` "onclick="irproducto('${element.name}')">
         <p class="nombreAuto">` + element.name + `</p>
         <p class="descripcionauto">`+ element.description + `</p>
         <p class=>Costo = `+ element.currency + ` ` + '<strong class="valor">' + element.cost + `</strong></p>

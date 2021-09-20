@@ -52,3 +52,7 @@ function establecerusuario() {
   var esquina = document.getElementById("esquinausuario")
   esquina.innerHTML = '<a href="my-profile.html">' + localStorage.usuario + '</a>'
 }
+function irproducto(nombre) {
+  window.location.href = 'product-info.html'
+  localStorage.setItem("producto", (JSON.stringify(nombre)))
+}

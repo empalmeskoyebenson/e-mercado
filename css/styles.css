@@ -173,4 +173,66 @@ p.nombreAuto{
   color: white;
   margin-bottom: 0px;
 }
+#contcarousel{
+  width: 50%;
+  float: left;
+  background-color: grey;
+  margin-right: 25px;
+}
+#contenidoauto{
+  width: 100%;
+  height: 100%;
+  padding-bottom: 100px;
+  margin-top: 30px;
+}
+#divcomentarios{
+  width: 100%;
+  border: 3px solid black;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  background-color: lightgray;
+}
+.comentario{
+  border: 2px solid cyan;
+  background-color: lightblue;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 15px;
+}
+.comentario p{
+  line-height: 10px;
+}
+.comentariouser{
+  font-weight: bold;
+}
+.comentariotime{
+  float: right;
+}
+.puntuacion {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  }
 
+  .puntuacion input {
+  position: absolute;
+  top: -100px;
+  }
+
+
+  .puntuacion label {
+  float: right;
+  color: #c1b8b8;
+  font-size: 30px; 
+  }
+
+  .puntuacion label:hover,
+  .puntuacion label:hover ~ label,
+  .puntuacion input:checked ~ label {
+  color:orange;
+  }
+  span{
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-weight: 400;
+      color: black
+  }
