@@ -5,8 +5,10 @@ let contenido = [];
 let comentarios = [];
 let imagenes = [];
 let ratings = [];
+let relacionados = [];
 let rating = 0;
 let comentario = "";
+let algo = [];
 
 // Hice mi propio JSON con la info de todos los autos, pero los comentarios son genéricos
 document.addEventListener("DOMContentLoaded", function (e) {
@@ -16,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         for (let i = 0; i < contenido.length; i++) {
             if (contenido[i].name == JSON.parse(localStorage.producto)) {
                 imagenes = contenido[i].images
+                relacionados = contenido[i].relatedProducts
                 contenedor = `
             <h1>${contenido[i].name}</h1>
             <p>${contenido[i].description}</p>
@@ -54,6 +57,22 @@ document.addEventListener("DOMContentLoaded", function (e) {
             </div>
             `
             document.getElementById("divcomentarios").innerHTML += contenedor
+        }
+    })).then(getJSONData(PRODUCTS_URL).then(datos => {
+        algo = datos.data
+        for (let index = 0; index < algo.length; index++) {
+            if (relacionados.includes(index)) {
+                contenido = ""
+                contenido = `
+                <div class="contRel">
+                <img onclick="irproducto('${algo[index].name}')" class="w-100" src="${algo[index].imgSrc}">
+                <i>${algo[index].currency} ${algo[index].cost}</i>
+                <i style="float:right;">${algo[index].name}</i>
+                </div>
+                `
+                document.getElementById("divrelated").innerHTML += contenido
+            }
+
         }
     }))
 })

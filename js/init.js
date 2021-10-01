@@ -50,9 +50,11 @@ document.addEventListener("DOMContentLoaded", function (e) {
 });
 function establecerusuario() {
   var esquina = document.getElementById("esquinausuario")
-  esquina.innerHTML = '<a href="my-profile.html">' + localStorage.usuario + '</a>'
+  esquina.innerHTML = localStorage.usuario
 }
 function irproducto(nombre) {
-  window.location.href = 'product-info.html'
   localStorage.setItem("producto", (JSON.stringify(nombre)))
+  if (window.location.href != 'product-info.html') {
+    window.location.href = 'product-info.html'
+  } else window.location.reload
 }

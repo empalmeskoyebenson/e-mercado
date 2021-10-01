@@ -236,3 +236,16 @@ p.nombreAuto{
       font-weight: 400;
       color: black
   }
+.contRel{
+  width: 86%;
+  padding: 20px;
+}
+#divrelated{
+  width: 50%;
+  margin-bottom: 25px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  background-color: lightgray;
+  margin-left: 25%;
+}

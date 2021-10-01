@@ -2,6 +2,7 @@
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function (e) {
+    localStorage.removeItem('usuario')
     document.getElementById("btnlogin").addEventListener("click", function () {
         let userinput = document.getElementById("userinput")
         let passinput = document.getElementById("passinput")
