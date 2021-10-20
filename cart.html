@@ -11,7 +11,6 @@
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-
   <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -31,11 +30,13 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/dropzone.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/stylecart.css">
+
 </head>
 
 <body>
   <nav class="site-header sticky-top py-1 bg-dark">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
+    <div class="container d-none d-md-flex flex-column flex-md-row justify-content-between">
       <a class="py-2 d-none d-md-inline-block" href="inicio.html">Inicio</a>
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
@@ -48,14 +49,375 @@
           <a class="dropdown-item" href="cart.html">Carrito</a>
           <a class="dropdown-item" href="index.html">Cerrar Sesión</a>
         </div>    </div>
+      </div>
+      <div class="d-md-none container d-flex justify-content-between">
+        <div class="dropdown">
+          <button style="font-size: 1em;" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Sitio
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a style="font-size: 1em;" class="dropdown-item" href="inicio.html">Inicio</a>
+            <a style="font-size: 1em;" class="dropdown-item" href="categories.html">Categorías</a>
+            <a style="font-size: 1em;" class="dropdown-item" href="products.html">Productos</a>
+            <a style="font-size: 1em;" class="dropdown-item" href="sell.html">Vender</a>
+          </div>    </div>
+        <div class="dropdown">
+          <button style="font-size: 1em;" id="esquinausuario2" class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          </button>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+            <a style="font-size: 1em;" class="dropdown-item" href="my-profile.html">Mi perfil</a>
+            <a style="font-size: 1em;" class="dropdown-item" href="cart.html">Carrito</a>
+            <a style="font-size: 1em;" class="dropdown-item" href="index.html">Cerrar Sesión</a>
+          </div>    </div>
+        </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 17/10/2021) y Entrega 7 (Fecha de entrega: 14/11/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+
+
+
+    <div class="container-fluid mt-5 mr-2" id="contenedorItems">
+      <div class="row">
+        <div class="col-12 text-center"><h2 style="border-radius: 0.2em; background-color: gray;">Carrito</h2></div>
+      </div>
+      <div class="row">
+
+
+
+
+        <div class="col-12 col-md-6 " id="listprod">
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <div class="col-12 col-md-6 border-md-right" id="opcpago">
+          <div style="background-color: lightgray;" class="row justify-content-around mb-5 mt-5">
+            <div class="col-4 text-center"><h5 id="cantidadProductos">0</h5></div>
+            <div class="col-4 text-center"><h5>=</h5></div>
+            <div class="col-4 text-center"><h5><strong class="divisa">$</strong><strong class="USD" id="totalProductos" style="font-weight: normal; font-size: 1.5em;">0</strong></h5></div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="row justify-content-center">
+                <div class="col-12">
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <label class="input-group-text" for="inputGroupSelect01">Pais</label>
+                    </div>
+                    <select class="custom-select" id="inputGroupSelect01">
+                                            <option style="font-size: 1em;" value="Afghanistan">Afghanistan</option>
+                      <option style="font-size: 1em;" value="Albania">Albania</option>
+                      <option style="font-size: 1em;" value="Algeria">Algeria</option>
+                      <option style="font-size: 1em;" value="American Samoa">American Samoa</option>
+                      <option style="font-size: 1em;" value="Andorra">Andorra</option>
+                      <option style="font-size: 1em;" value="Angola">Angola</option>
+                      <option style="font-size: 1em;" value="Anguilla">Anguilla</option>
+                      <option style="font-size: 1em;" value="Antartica">Antarctica</option>
+                      <option style="font-size: 1em;" value="Antigua and Barbuda">Antigua and Barbuda</option>
+                      <option style="font-size: 1em;" value="Argentina">Argentina</option>
+                      <option style="font-size: 1em;" value="Armenia">Armenia</option>
+                      <option style="font-size: 1em;" value="Aruba">Aruba</option>
+                      <option style="font-size: 1em;" value="Australia">Australia</option>
+                      <option style="font-size: 1em;" value="Austria">Austria</option>
+                      <option style="font-size: 1em;" value="Azerbaijan">Azerbaijan</option>
+                      <option style="font-size: 1em;" value="Bahamas">Bahamas</option>
+                      <option style="font-size: 1em;" value="Bahrain">Bahrain</option>
+                      <option style="font-size: 1em;" value="Bangladesh">Bangladesh</option>
+                      <option style="font-size: 1em;" value="Barbados">Barbados</option>
+                      <option style="font-size: 1em;" value="Belarus">Belarus</option>
+                      <option style="font-size: 1em;" value="Belgium">Belgium</option>
+                      <option style="font-size: 1em;" value="Belize">Belize</option>
+                      <option style="font-size: 1em;" value="Benin">Benin</option>
+                      <option style="font-size: 1em;" value="Bermuda">Bermuda</option>
+                      <option style="font-size: 1em;" value="Bhutan">Bhutan</option>
+                      <option style="font-size: 1em;" value="Bolivia">Bolivia</option>
+                      <option style="font-size: 1em;" value="Bosnia and Herzegowina">Bosnia and Herzegowina</option>
+                      <option style="font-size: 1em;" value="Botswana">Botswana</option>
+                      <option style="font-size: 1em;" value="Bouvet Island">Bouvet Island</option>
+                      <option style="font-size: 1em;" value="Brazil">Brazil</option>
+                      <option style="font-size: 1em;" value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+                      <option style="font-size: 1em;" value="Brunei Darussalam">Brunei Darussalam</option>
+                      <option style="font-size: 1em;" value="Bulgaria">Bulgaria</option>
+                      <option style="font-size: 1em;" value="Burkina Faso">Burkina Faso</option>
+                      <option style="font-size: 1em;" value="Burundi">Burundi</option>
+                      <option style="font-size: 1em;" value="Cambodia">Cambodia</option>
+                      <option style="font-size: 1em;" value="Cameroon">Cameroon</option>
+                      <option style="font-size: 1em;" value="Canada">Canada</option>
+                      <option style="font-size: 1em;" value="Cape Verde">Cape Verde</option>
+                      <option style="font-size: 1em;" value="Cayman Islands">Cayman Islands</option>
+                      <option style="font-size: 1em;" value="Central African Republic">Central African Republic</option>
+                      <option style="font-size: 1em;" value="Chad">Chad</option>
+                      <option style="font-size: 1em;" value="Chile">Chile</option>
+                      <option style="font-size: 1em;" value="China">China</option>
+                      <option style="font-size: 1em;" value="Christmas Island">Christmas Island</option>
+                      <option style="font-size: 1em;" value="Cocos Islands">Cocos (Keeling) Islands</option>
+                      <option style="font-size: 1em;" value="Colombia">Colombia</option>
+                      <option style="font-size: 1em;" value="Comoros">Comoros</option>
+                      <option style="font-size: 1em;" value="Congo">Congo</option>
+                      <option style="font-size: 1em;" value="Congo">Congo, the Democratic Republic of the</option>
+                      <option style="font-size: 1em;" value="Cook Islands">Cook Islands</option>
+                      <option style="font-size: 1em;" value="Costa Rica">Costa Rica</option>
+                      <option style="font-size: 1em;" value="Cota D'Ivoire">Cote d'Ivoire</option>
+                      <option style="font-size: 1em;" value="Croatia">Croatia (Hrvatska)</option>
+                      <option style="font-size: 1em;" value="Cuba">Cuba</option>
+                      <option style="font-size: 1em;" value="Cyprus">Cyprus</option>
+                      <option style="font-size: 1em;" value="Czech Republic">Czech Republic</option>
+                      <option style="font-size: 1em;" value="Denmark">Denmark</option>
+                      <option style="font-size: 1em;" value="Djibouti">Djibouti</option>
+                      <option style="font-size: 1em;" value="Dominica">Dominica</option>
+                      <option style="font-size: 1em;" value="Dominican Republic">Dominican Republic</option>
+                      <option style="font-size: 1em;" value="East Timor">East Timor</option>
+                      <option style="font-size: 1em;" value="Ecuador">Ecuador</option>
+                      <option style="font-size: 1em;" value="Egypt">Egypt</option>
+                      <option style="font-size: 1em;" value="El Salvador">El Salvador</option>
+                      <option style="font-size: 1em;" value="Equatorial Guinea">Equatorial Guinea</option>
+                      <option style="font-size: 1em;" value="Eritrea">Eritrea</option>
+                      <option style="font-size: 1em;" value="Estonia">Estonia</option>
+                      <option style="font-size: 1em;" value="Ethiopia">Ethiopia</option>
+                      <option style="font-size: 1em;" value="Falkland Islands">Falkland Islands (Malvinas)</option>
+                      <option style="font-size: 1em;" value="Faroe Islands">Faroe Islands</option>
+                      <option style="font-size: 1em;" value="Fiji">Fiji</option>
+                      <option style="font-size: 1em;" value="Finland">Finland</option>
+                      <option style="font-size: 1em;" value="France">France</option>
+                      <option style="font-size: 1em;" value="France Metropolitan">France, Metropolitan</option>
+                      <option style="font-size: 1em;" value="French Guiana">French Guiana</option>
+                      <option style="font-size: 1em;" value="French Polynesia">French Polynesia</option>
+                      <option style="font-size: 1em;" value="French Southern Territories">French Southern Territories</option>
+                      <option style="font-size: 1em;" value="Gabon">Gabon</option>
+                      <option style="font-size: 1em;" value="Gambia">Gambia</option>
+                      <option style="font-size: 1em;" value="Georgia">Georgia</option>
+                      <option style="font-size: 1em;" value="Germany">Germany</option>
+                      <option style="font-size: 1em;" value="Ghana">Ghana</option>
+                      <option style="font-size: 1em;" value="Gibraltar">Gibraltar</option>
+                      <option style="font-size: 1em;" value="Greece">Greece</option>
+                      <option style="font-size: 1em;" value="Greenland">Greenland</option>
+                      <option style="font-size: 1em;" value="Grenada">Grenada</option>
+                      <option style="font-size: 1em;" value="Guadeloupe">Guadeloupe</option>
+                      <option style="font-size: 1em;" value="Guam">Guam</option>
+                      <option style="font-size: 1em;" value="Guatemala">Guatemala</option>
+                      <option style="font-size: 1em;" value="Guinea">Guinea</option>
+                      <option style="font-size: 1em;" value="Guinea-Bissau">Guinea-Bissau</option>
+                      <option style="font-size: 1em;" value="Guyana">Guyana</option>
+                      <option style="font-size: 1em;" value="Haiti">Haiti</option>
+                      <option style="font-size: 1em;" value="Heard and McDonald Islands">Heard and Mc Donald Islands</option>
+                      <option style="font-size: 1em;" value="Holy See">Holy See (Vatican City State)</option>
+                      <option style="font-size: 1em;" value="Honduras">Honduras</option>
+                      <option style="font-size: 1em;" value="Hong Kong">Hong Kong</option>
+                      <option style="font-size: 1em;" value="Hungary">Hungary</option>
+                      <option style="font-size: 1em;" value="Iceland">Iceland</option>
+                      <option style="font-size: 1em;" value="India">India</option>
+                      <option style="font-size: 1em;" value="Indonesia">Indonesia</option>
+                      <option style="font-size: 1em;" value="Iran">Iran (Islamic Republic of)</option>
+                      <option style="font-size: 1em;" value="Iraq">Iraq</option>
+                      <option style="font-size: 1em;" value="Ireland">Ireland</option>
+                      <option style="font-size: 1em;" value="Israel">Israel</option>
+                      <option style="font-size: 1em;" value="Italy">Italy</option>
+                      <option style="font-size: 1em;" value="Jamaica">Jamaica</option>
+                      <option style="font-size: 1em;" value="Japan">Japan</option>
+                      <option style="font-size: 1em;" value="Jordan">Jordan</option>
+                      <option style="font-size: 1em;" value="Kazakhstan">Kazakhstan</option>
+                      <option style="font-size: 1em;" value="Kenya">Kenya</option>
+                      <option style="font-size: 1em;" value="Kiribati">Kiribati</option>
+                      <option style="font-size: 1em;" value="Democratic People's Republic of Korea">Korea, Democratic People's Republic of</option>
+                      <option style="font-size: 1em;" value="Korea">Korea, Republic of</option>
+                      <option style="font-size: 1em;" value="Kuwait">Kuwait</option>
+                      <option style="font-size: 1em;" value="Kyrgyzstan">Kyrgyzstan</option>
+                      <option style="font-size: 1em;" value="Lao">Lao People's Democratic Republic</option>
+                      <option style="font-size: 1em;" value="Latvia">Latvia</option>
+                      <option style="font-size: 1em;" value="Lebanon" selected>Lebanon</option>
+                      <option style="font-size: 1em;" value="Lesotho">Lesotho</option>
+                      <option style="font-size: 1em;" value="Liberia">Liberia</option>
+                      <option style="font-size: 1em;" value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
+                      <option style="font-size: 1em;" value="Liechtenstein">Liechtenstein</option>
+                      <option style="font-size: 1em;" value="Lithuania">Lithuania</option>
+                      <option style="font-size: 1em;" value="Luxembourg">Luxembourg</option>
+                      <option style="font-size: 1em;" value="Macau">Macau</option>
+                      <option style="font-size: 1em;" value="Macedonia">Macedonia, The Former Yugoslav Republic of</option>
+                      <option style="font-size: 1em;" value="Madagascar">Madagascar</option>
+                      <option style="font-size: 1em;" value="Malawi">Malawi</option>
+                      <option style="font-size: 1em;" value="Malaysia">Malaysia</option>
+                      <option style="font-size: 1em;" value="Maldives">Maldives</option>
+                      <option style="font-size: 1em;" value="Mali">Mali</option>
+                      <option style="font-size: 1em;" value="Malta">Malta</option>
+                      <option style="font-size: 1em;" value="Marshall Islands">Marshall Islands</option>
+                      <option style="font-size: 1em;" value="Martinique">Martinique</option>
+                      <option style="font-size: 1em;" value="Mauritania">Mauritania</option>
+                      <option style="font-size: 1em;" value="Mauritius">Mauritius</option>
+                      <option style="font-size: 1em;" value="Mayotte">Mayotte</option>
+                      <option style="font-size: 1em;" value="Mexico">Mexico</option>
+                      <option style="font-size: 1em;" value="Micronesia">Micronesia, Federated States of</option>
+                      <option style="font-size: 1em;" value="Moldova">Moldova, Republic of</option>
+                      <option style="font-size: 1em;" value="Monaco">Monaco</option>
+                      <option style="font-size: 1em;" value="Mongolia">Mongolia</option>
+                      <option style="font-size: 1em;" value="Montserrat">Montserrat</option>
+                      <option style="font-size: 1em;" value="Morocco">Morocco</option>
+                      <option style="font-size: 1em;" value="Mozambique">Mozambique</option>
+                      <option style="font-size: 1em;" value="Myanmar">Myanmar</option>
+                      <option style="font-size: 1em;" value="Namibia">Namibia</option>
+                      <option style="font-size: 1em;" value="Nauru">Nauru</option>
+                      <option style="font-size: 1em;" value="Nepal">Nepal</option>
+                      <option style="font-size: 1em;" value="Netherlands">Netherlands</option>
+                      <option style="font-size: 1em;" value="Netherlands Antilles">Netherlands Antilles</option>
+                      <option style="font-size: 1em;" value="New Caledonia">New Caledonia</option>
+                      <option style="font-size: 1em;" value="New Zealand">New Zealand</option>
+                      <option style="font-size: 1em;" value="Nicaragua">Nicaragua</option>
+                      <option style="font-size: 1em;" value="Niger">Niger</option>
+                      <option style="font-size: 1em;" value="Nigeria">Nigeria</option>
+                      <option style="font-size: 1em;" value="Niue">Niue</option>
+                      <option style="font-size: 1em;" value="Norfolk Island">Norfolk Island</option>
+                      <option style="font-size: 1em;" value="Northern Mariana Islands">Northern Mariana Islands</option>
+                      <option style="font-size: 1em;" value="Norway">Norway</option>
+                      <option style="font-size: 1em;" value="Oman">Oman</option>
+                      <option style="font-size: 1em;" value="Pakistan">Pakistan</option>
+                      <option style="font-size: 1em;" value="Palau">Palau</option>
+                      <option style="font-size: 1em;" value="Panama">Panama</option>
+                      <option style="font-size: 1em;" value="Papua New Guinea">Papua New Guinea</option>
+                      <option style="font-size: 1em;" value="Paraguay">Paraguay</option>
+                      <option style="font-size: 1em;" value="Peru">Peru</option>
+                      <option style="font-size: 1em;" value="Philippines">Philippines</option>
+                      <option style="font-size: 1em;" value="Pitcairn">Pitcairn</option>
+                      <option style="font-size: 1em;" value="Poland">Poland</option>
+                      <option style="font-size: 1em;" value="Portugal">Portugal</option>
+                      <option style="font-size: 1em;" value="Puerto Rico">Puerto Rico</option>
+                      <option style="font-size: 1em;" value="Qatar">Qatar</option>
+                      <option style="font-size: 1em;" value="Reunion">Reunion</option>
+                      <option style="font-size: 1em;" value="Romania">Romania</option>
+                      <option style="font-size: 1em;" value="Russia">Russian Federation</option>
+                      <option style="font-size: 1em;" value="Rwanda">Rwanda</option>
+                      <option style="font-size: 1em;" value="Saint Kitts and Nevis">Saint Kitts and Nevis</option> 
+                      <option style="font-size: 1em;" value="Saint LUCIA">Saint LUCIA</option>
+                      <option style="font-size: 1em;" value="Saint Vincent">Saint Vincent and the Grenadines</option>
+                      <option style="font-size: 1em;" value="Samoa">Samoa</option>
+                      <option style="font-size: 1em;" value="San Marino">San Marino</option>
+                      <option style="font-size: 1em;" value="Sao Tome and Principe">Sao Tome and Principe</option> 
+                      <option style="font-size: 1em;" value="Saudi Arabia">Saudi Arabia</option>
+                      <option style="font-size: 1em;" value="Senegal">Senegal</option>
+                      <option style="font-size: 1em;" value="Seychelles">Seychelles</option>
+                      <option style="font-size: 1em;" value="Sierra">Sierra Leone</option>
+                      <option style="font-size: 1em;" value="Singapore">Singapore</option>
+                      <option style="font-size: 1em;" value="Slovakia">Slovakia (Slovak Republic)</option>
+                      <option style="font-size: 1em;" value="Slovenia">Slovenia</option>
+                      <option style="font-size: 1em;" value="Solomon Islands">Solomon Islands</option>
+                      <option style="font-size: 1em;" value="Somalia">Somalia</option>
+                      <option style="font-size: 1em;" value="South Africa">South Africa</option>
+                      <option style="font-size: 1em;" value="South Georgia">South Georgia and the South Sandwich Islands</option>
+                      <option style="font-size: 1em;" value="Span">Spain</option>
+                      <option style="font-size: 1em;" value="SriLanka">Sri Lanka</option>
+                      <option style="font-size: 1em;" value="St. Helena">St. Helena</option>
+                      <option style="font-size: 1em;" value="St. Pierre and Miguelon">St. Pierre and Miquelon</option>
+                      <option style="font-size: 1em;" value="Sudan">Sudan</option>
+                      <option style="font-size: 1em;" value="Suriname">Suriname</option>
+                      <option style="font-size: 1em;" value="Svalbard">Svalbard and Jan Mayen Islands</option>
+                      <option style="font-size: 1em;" value="Swaziland">Swaziland</option>
+                      <option style="font-size: 1em;" value="Sweden">Sweden</option>
+                      <option style="font-size: 1em;" value="Switzerland">Switzerland</option>
+                      <option style="font-size: 1em;" value="Syria">Syrian Arab Republic</option>
+                      <option style="font-size: 1em;" value="Taiwan">Taiwan, Province of China</option>
+                      <option style="font-size: 1em;" value="Tajikistan">Tajikistan</option>
+                      <option style="font-size: 1em;" value="Tanzania">Tanzania, United Republic of</option>
+                      <option style="font-size: 1em;" value="Thailand">Thailand</option>
+                      <option style="font-size: 1em;" value="Togo">Togo</option>
+                      <option style="font-size: 1em;" value="Tokelau">Tokelau</option>
+                      <option style="font-size: 1em;" value="Tonga">Tonga</option>
+                      <option style="font-size: 1em;" value="Trinidad and Tobago">Trinidad and Tobago</option>
+                      <option style="font-size: 1em;" value="Tunisia">Tunisia</option>
+                      <option style="font-size: 1em;" value="Turkey">Turkey</option>
+                      <option style="font-size: 1em;" value="Turkmenistan">Turkmenistan</option>
+                      <option style="font-size: 1em;" value="Turks and Caicos">Turks and Caicos Islands</option>
+                      <option style="font-size: 1em;" value="Tuvalu">Tuvalu</option>
+                      <option style="font-size: 1em;" value="Uganda">Uganda</option>
+                      <option style="font-size: 1em;" value="Ukraine">Ukraine</option>
+                      <option style="font-size: 1em;" value="United Arab Emirates">United Arab Emirates</option>
+                      <option style="font-size: 1em;" value="United Kingdom">United Kingdom</option>
+                      <option style="font-size: 1em;" value="United States">United States</option>
+                      <option style="font-size: 1em;" value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
+                      <option style="font-size: 1em;" selected value="Uruguay">Uruguay</option>
+                      <option style="font-size: 1em;" value="Uzbekistan">Uzbekistan</option>
+                      <option style="font-size: 1em;" value="Vanuatu">Vanuatu</option>
+                      <option style="font-size: 1em;" value="Venezuela">Venezuela</option>
+                      <option style="font-size: 1em;" value="Vietnam">Viet Nam</option>
+                      <option style="font-size: 1em;" value="Virgin Islands (British)">Virgin Islands (British)</option>
+                      <option style="font-size: 1em;" value="Virgin Islands (U.S)">Virgin Islands (U.S.)</option>
+                      <option style="font-size: 1em;" value="Wallis and Futana Islands">Wallis and Futuna Islands</option>
+                      <option style="font-size: 1em;" value="Western Sahara">Western Sahara</option>
+                      <option style="font-size: 1em;" value="Yemen">Yemen</option>
+                      <option style="font-size: 1em;" value="Serbia">Serbia</option>
+                      <option style="font-size: 1em;" value="Zambia">Zambia</option>
+                      <option style="font-size: 1em;" value="Zimbabwe">Zimbabwe</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-10" style="background-color:lightgray; border-radius: 10px;">
+                  <div class="row">
+                    <div class="col-12">
+                      <p style="font-weight: bold; font-size: 2em;">Método de envio:</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div  class="col-12">                  
+                      <div class="custom-control custom-radio mb-3">
+                      <input required type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                      <label style="font-weight: bold; font-size: 1.5em;" class="custom-control-label" for="customRadio1">Premium(de 2 a 5 dias) (+15% sobre el subtotal)</label>
+                    </div>
+                    <div class="custom-control custom-radio mb-3">
+                      <input required type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                      <label style="font-weight: bold; font-size: 1.5em;" class="custom-control-label" for="customRadio2">Express(de 5 a 8 dias) (+7% sobre el subtotal)</label>
+                    </div>
+                    <div class="custom-control custom-radio mb-3">
+                      <input checked required type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
+                      <label style="font-weight: bold; font-size: 1.5em;" class="custom-control-label" for="customRadio3">Standard(de 12 a 15 dias) (+5% sobre el subtotal)</label>
+                    </div></div>
+                  </div>
+                </div>
+              <div class="row justify-content-around mt-3 mb-5">
+                <div class="col-4">
+                  <div class="form-check form-check-inline">
+                    <input required  class="form-check-input" type="radio" name="radiomoneda" id="inlineRadio1" value="UYU">
+                    <label style="font-size: 1.5em;" class="form-check-label" for="inlineRadio1">$UYU</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input required checked class="form-check-input" type="radio" name="radiomoneda" id="inlineRadio2" value="USD">
+                    <label style="font-size: 1.5em;" class="form-check-label" for="inlineRadio2">$USD</label>
+                  </div>
+                </div>
+                <div style="font-size: 1.5em;" class="col-4">
+                  Subtotal: <strong class="divisa">$</strong><strong id="subtotal" style="font-weight: normal; font-size: 1.5em;">500</strong>
+                </div>
+              </div>
+              </div>
+              <div class="row"></div>
+            </div>
+          </div>
+          <div class="row justify-content-center mb-3">
+            <div class="col-8 w-100">
+              <select class="form-control form-control-lg">
+                <option style="font-size: 1em;" style="font-size: 1.5em;">Visa</option>
+                <option style="font-size: 1em;" style="font-size: 1.5em;">MasterCard</option>
+                <option style="font-size: 1em;" style="font-size: 1em;" style="font-size: 1.5em;">Transferencia bancaria</option>
+              </select>
+            </div>
+          </div>
+          <div class="row justify-content-center mb-5">
+            <div class="col-8">
+            <button style="font-size: 1.5em;" class=" w-100 btn btn-primary">Pagar</button>
+          </div>
+          </div>
+          <div class="row"></div>
+        </div>
+      </div>
     </div>
+
+
+
+
+
   </div>
   <div id="spinner-wrapper">
     <div class="lds-ring">
@@ -71,5 +433,6 @@
   <script src="js/init.js"></script>
   <script src="js/cart.js"></script>
 </body>
-
 </html>
+
+

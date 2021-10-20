@@ -51,6 +51,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
 function establecerusuario() {
   var esquina = document.getElementById("esquinausuario")
   esquina.innerHTML = localStorage.usuario
+  var esquina = document.getElementById("esquinausuario2")
+  esquina.innerHTML = localStorage.usuario
 }
 function irproducto(nombre) {
   localStorage.setItem("producto", (JSON.stringify(nombre)))
