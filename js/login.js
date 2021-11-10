@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         let userinput = document.getElementById("userinput")
         let passinput = document.getElementById("passinput")
         if (userinput.value.length != 0 && passinput.value.length >= 8) {
-            window.localStorage.setItem('usuario', userinput.value)
+            window.localStorage.setItem('usuario', JSON.stringify(userinput.value))
             alert("entrando al sitio")
             window.location.href = 'inicio.html';
 

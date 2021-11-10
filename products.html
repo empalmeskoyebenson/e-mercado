@@ -15,7 +15,7 @@
   </head>
   <body>
     <nav class="site-header sticky-top py-1 bg-dark">
-      <div class="container d-flex flex-column flex-md-row justify-content-between">
+      <div class="container d-none d-md-flex flex-column flex-md-row justify-content-between">
         <a class="py-2 d-none d-md-inline-block" href="inicio.html">Inicio</a>
         <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
@@ -27,26 +27,65 @@
             <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
             <a class="dropdown-item" href="cart.html">Carrito</a>
             <a class="dropdown-item" href="index.html">Cerrar Sesión</a>
+          </div>    </div>
+        </div>
+        <div class="d-md-none container d-flex justify-content-between">
+          <div class="dropdown">
+            <button style="font-size: 1em;" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Sitio
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a style="font-size: 1em;" class="dropdown-item" href="inicio.html">Inicio</a>
+              <a style="font-size: 1em;" class="dropdown-item" href="categories.html">Categorías</a>
+              <a style="font-size: 1em;" class="dropdown-item" href="products.html">Productos</a>
+              <a style="font-size: 1em;" class="dropdown-item" href="sell.html">Vender</a>
+            </div>    </div>
+          <div class="dropdown">
+            <button style="font-size: 1em;" id="esquinausuario2" class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+              <a style="font-size: 1em;" class="dropdown-item" href="my-profile.html">Mi perfil</a>
+              <a style="font-size: 1em;" class="dropdown-item" href="cart.html">Carrito</a>
+              <a style="font-size: 1em;" class="dropdown-item" href="index.html">Cerrar Sesión</a>
+            </div>    </div>
+          </div>
+    </nav>
+  <div class="container-flex m-0">
+    <div class="filtroprecio row">
+      <div class="col-6">
+        <div class="row">
+          <div class="col">
+            <input placeholder="Precio Min." type="number" name="minprecio" id="minprecio">
+            <input placeholder="Precio Max." type="number" name="maxprecio" id="maxprecio">
+          </div>
+          <div class="col">
+            <button onclick="aplicarfiltros()">Filtrar</button>
+            <button onclick="limpiarfiltros()">Limpiar</button>
           </div>
         </div>
       </div>
-    </nav>
-    <div class="filtroprecio">
-      <input placeholder="Precio Min." type="number" name="minprecio" id="minprecio">
-      <input placeholder="Precio Max." type="number" name="maxprecio" id="maxprecio">
-      <button onclick="aplicarfiltros()">Filtrar</button>
-      <button onclick="limpiarfiltros()">Limpiar</button><br><br>
-      <input type="search" name="buscador" id="buscador" placeholder="buscar"><br><br>
-      <label for="filtropor">Ordenar por:</label>
-      <select id="filtropor" name="filtropor">
-        <option value="default" selected disabled>-Seleccione-</option>
-        <option value="relev">Relevancia</option>
-        <option value="pAsc">Precio ascendente</option>
-        <option value="pDes">Precio descendente</option>
-      </select>
+      <div class="col-12 col-md-6">
+        <input type="search" name="buscador" id="buscador" placeholder="buscar">
+      </div>
+      <div class="col-12 col-md-6">
+        <label for="filtropor">Ordenar por:</label>
+        <select id="filtropor" name="filtropor">
+          <option value="default" selected disabled>-Seleccione-</option>
+          <option value="relev">Relevancia</option>
+          <option value="pAsc">Precio ascendente</option>
+          <option value="pDes">Precio descendente</option>
+  </select>
+      </div>
     </div>
-    <div id="despl-list-prod">
-      <div id="despl-list-prod-div"></div>
+  </div>
+
+
+
+
+    <div id="despl-list-prod" class="container-flex m-0">
+      <div id="despl-list-prod-div" class="row w-100 justify-content-center">
+
+      </div>
     </div>
     <footer class="text-muted bg-light">
       <div class="container">

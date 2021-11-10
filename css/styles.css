@@ -139,7 +139,7 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
-.contenidoAutos{
+/* .contenidoAutos{
   background-color: lightgray;
   margin-left: 25px;
   margin-top: 40px;
@@ -165,7 +165,7 @@ p.nombreAuto{
   padding-left: 50px;
   font-size: 30px;
   border-radius: 5px;
-}
+} */
 .oculto{
   display: none;
 }

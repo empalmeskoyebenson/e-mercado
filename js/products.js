@@ -17,13 +17,18 @@ document.addEventListener("DOMContentLoaded", function (e) {
         datos.data.forEach(element => {
             let contenido = "";
             contenido = `
-          <div class="contenidoAutos" >
-              <img class="imgauto" src="`+ element.imgSrc + ` "onclick="irproducto('${element.name}')">
-              <p class="nombreAuto">` + element.name + `</p>
-              <p class="descripcionauto">`+ element.description + `</p>
-              <p class=>Costo = `+ element.currency + ` ` + '<strong class="valor">' + element.cost + `</strong></p>
-              <p>Vendidos: `+ '<strong class=vendidos">' + element.soldCount + `</strong></p>
+            <div class="col-12 col-md-6 contenidoAutos">
+          <div class="card">
+            <img class="card-img-top p-3" src="`+ element.imgSrc + ` "onclick="irproducto('${element.name}')">
+            <div class="card-body">
+                <h5 class="card-title nombreAuto">` + element.name + `</h5>
+                <p class="card-text">Costo = `+ element.currency + ` ` + '<strong class="valor">' + element.cost + `</strong></p>
+                <p class="card-text descripcionauto">`+ element.description + `</p>
+                <p class="card-text">Vendidos: `+ '<strong class=vendidos">' + element.soldCount + `</strong></p>
+            </div>
+            </div>
           </div>
+          
           `;
             document.getElementById("despl-list-prod-div").innerHTML += contenido;
         }
@@ -40,13 +45,17 @@ function mostrarlista(array) {
     array.forEach(element => {
         let contenido = "";
         contenido = `
-        <div class="contenidoAutos">
-        <img class="imgauto" src="`+ element.imgSrc + ` "onclick="irproducto('${element.name}')">
-        <p class="nombreAuto">` + element.name + `</p>
-        <p class="descripcionauto">`+ element.description + `</p>
-        <p class=>Costo = `+ element.currency + ` ` + '<strong class="valor">' + element.cost + `</strong></p>
-        <p>Vendidos: `+ '<strong class=vendidos">' + element.soldCount + `</strong></p>
-    </div>
+        <div class="col-12 col-md-6 contenidoAutos">
+        <div class="card">
+          <img class="card-img-top p-3" src="`+ element.imgSrc + ` "onclick="irproducto('${element.name}')">
+          <div class="card-body">
+              <h5 class="card-title nombreAuto">` + element.name + `</h5>
+              <p class="card-text">Costo = `+ element.currency + ` ` + '<strong class="valor">' + element.cost + `</strong></p>
+              <p class="card-text descripcionauto">`+ element.description + `</p>
+              <p class="card-text">Vendidos: `+ '<strong class=vendidos">' + element.soldCount + `</strong></p>
+          </div>
+          </div>
+        </div>
           `;
         document.getElementById("despl-list-prod-div").innerHTML += contenido;
     })
